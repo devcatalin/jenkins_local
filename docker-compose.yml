@@ -1,4 +1,4 @@
-# version: "3"
+version: "3"
 services:
   jenkins:
     build:
@@ -9,5 +9,7 @@ services:
       - "50000:50000"
     volumes:
       - ./jenkins_home:/var/jenkins_home
+      - ./pipelines:/var/jenkins_home/pipelines
+      - ./init_scripts:/var/jenkins_home/init.groovy.d
     environment:
       - JAVA_OPTS=-Djenkins.install.runSetupWizard=false

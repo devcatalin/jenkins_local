@@ -4,7 +4,7 @@ USER root
 
 # Install Maven and other necessary tools
 RUN apt-get update && \
-    apt-get install -y maven curl
+    apt-get install -y maven curl make
 
 # Install Go
 ENV GO_VERSION 1.23.1
@@ -17,9 +17,9 @@ ENV PATH="/usr/local/go/bin:${PATH}"
 ENV GOPATH="/go"
 ENV PATH="${GOPATH}/bin:${PATH}"
 
-# Copy the Groovy scripts
-COPY create_admin_user.groovy /usr/share/jenkins/ref/init.groovy.d/
-COPY setup_go.groovy /usr/share/jenkins/ref/init.groovy.d/
+# Create GOPATH directory and set permissions
+RUN mkdir -p "$GOPATH" && \
+    chown -R jenkins:jenkins "$GOPATH"
 
 # Copy the entrypoint script
 COPY entrypoint.sh /entrypoint.sh
