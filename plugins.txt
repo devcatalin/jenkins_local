@@ -1,0 +1,13 @@
+workflow-aggregator
+git
+github
+github-branch-source
+credentials-binding
+pipeline-stage-view
+junit
+build-timeout
+timestamper
+docker-workflow
+cloudbees-folder
+antisamy-markup-formatter
+configuration-as-code
