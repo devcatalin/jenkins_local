@@ -21,6 +21,10 @@ ENV PATH="${GOPATH}/bin:${PATH}"
 RUN mkdir -p "$GOPATH" && \
     chown -R jenkins:jenkins "$GOPATH"
 
+# Create a writable directory for Jenkins user
+RUN mkdir -p /usr/local/bin && \
+    chown -R jenkins:jenkins /usr/local/bin
+
 # Copy plugins.txt
 COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
 
