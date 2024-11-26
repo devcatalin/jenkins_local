@@ -2,7 +2,9 @@ workflow-aggregator
 git
 github
 github-branch-source
+credentials
 credentials-binding
+plain-credentials
 pipeline-stage-view
 junit
 build-timeout

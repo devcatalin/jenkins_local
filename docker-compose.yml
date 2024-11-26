@@ -11,5 +11,6 @@ services:
       - ./jenkins_home:/var/jenkins_home
       - ./pipelines:/var/jenkins_home/pipelines
       - ./init_scripts:/var/jenkins_home/init.groovy.d
+      - ./credentials.env:/var/jenkins_home/credentials.env
     environment:
       - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
