@@ -1,2 +1,4 @@
 /jenkins_home
 credentials.env
+.env
+init_plugins

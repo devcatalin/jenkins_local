@@ -1,4 +1,3 @@
-version: "3"
 services:
   jenkins:
     build:
@@ -12,5 +11,6 @@ services:
       - ./pipelines:/var/jenkins_home/pipelines
       - ./init_scripts:/var/jenkins_home/init.groovy.d
       - ./credentials.env:/var/jenkins_home/credentials.env
+      - ./init_plugins:/var/jenkins_home/init_plugins
     environment:
       - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
